@@ -13,8 +13,15 @@
 		65384E8F242A1D6E00CEB745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65384E8D242A1D6E00CEB745 /* Main.storyboard */; };
 		65384E91242A1D7000CEB745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65384E90242A1D7000CEB745 /* Assets.xcassets */; };
 		65384E94242A1D7000CEB745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65384E92242A1D7000CEB745 /* LaunchScreen.storyboard */; };
-		65384E9F242A1D7100CEB745 /* QueendominoScoreAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384E9E242A1D7100CEB745 /* QueendominoScoreAppTests.swift */; };
 		65384EAA242A1D7100CEB745 /* QueendominoScoreAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384EA9242A1D7100CEB745 /* QueendominoScoreAppUITests.swift */; };
+		65384EB8242A1DE300CEB745 /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384EB7242A1DE300CEB745 /* VisionObjectRecognitionViewController.swift */; };
+		65384EBA242A226300CEB745 /* Queendomino.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 65384EB9242A226300CEB745 /* Queendomino.mlmodel */; };
+		65C28992242A531100B45210 /* VisionToBoardConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C28991242A531100B45210 /* VisionToBoardConverter.swift */; };
+		65C28994242A534800B45210 /* PlayerBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C28993242A534800B45210 /* PlayerBoard.swift */; };
+		65C28996242A535E00B45210 /* LandPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C28995242A535E00B45210 /* LandPiece.swift */; };
+		65C6467B243A217F00B154E9 /* ScoreCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C6467A243A217F00B154E9 /* ScoreCalcTests.swift */; };
+		65D0D08F2439153C00F1DD1B /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D08E2439153C00F1DD1B /* ScoreCalculator.swift */; };
+		65D0D0912439158F00F1DD1B /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D0902439158F00F1DD1B /* PlayerScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		65384E84242A1D6E00CEB745 /* QueendominoScoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueendominoScoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65384E84242A1D6E00CEB745 /* QueendominoScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueendominoScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65384E87242A1D6E00CEB745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65384E89242A1D6E00CEB745 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		65384E8B242A1D6E00CEB745 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,11 +51,18 @@
 		65384E93242A1D7000CEB745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65384E95242A1D7000CEB745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65384E9A242A1D7100CEB745 /* QueendominoScoreAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueendominoScoreAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65384E9E242A1D7100CEB745 /* QueendominoScoreAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueendominoScoreAppTests.swift; sourceTree = "<group>"; };
 		65384EA0242A1D7100CEB745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65384EA5242A1D7100CEB745 /* QueendominoScoreAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueendominoScoreAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65384EA9242A1D7100CEB745 /* QueendominoScoreAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueendominoScoreAppUITests.swift; sourceTree = "<group>"; };
 		65384EAB242A1D7100CEB745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65384EB7242A1DE300CEB745 /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
+		65384EB9242A226300CEB745 /* Queendomino.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Queendomino.mlmodel; sourceTree = "<group>"; };
+		65C28991242A531100B45210 /* VisionToBoardConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionToBoardConverter.swift; sourceTree = "<group>"; };
+		65C28993242A534800B45210 /* PlayerBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBoard.swift; sourceTree = "<group>"; };
+		65C28995242A535E00B45210 /* LandPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandPiece.swift; sourceTree = "<group>"; };
+		65C6467A243A217F00B154E9 /* ScoreCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalcTests.swift; sourceTree = "<group>"; };
+		65D0D08E2439153C00F1DD1B /* ScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculator.swift; sourceTree = "<group>"; };
+		65D0D0902439158F00F1DD1B /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +103,7 @@
 		65384E85242A1D6E00CEB745 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				65384E84242A1D6E00CEB745 /* QueendominoScoreApp.app */,
+				65384E84242A1D6E00CEB745 /* QueendominoScore.app */,
 				65384E9A242A1D7100CEB745 /* QueendominoScoreAppTests.xctest */,
 				65384EA5242A1D7100CEB745 /* QueendominoScoreAppUITests.xctest */,
 			);
@@ -99,9 +113,12 @@
 		65384E86242A1D6E00CEB745 /* QueendominoScoreApp */ = {
 			isa = PBXGroup;
 			children = (
+				65C28990242A52E700B45210 /* ScoreCalculation */,
+				65384EB9242A226300CEB745 /* Queendomino.mlmodel */,
 				65384E87242A1D6E00CEB745 /* AppDelegate.swift */,
 				65384E89242A1D6E00CEB745 /* SceneDelegate.swift */,
 				65384E8B242A1D6E00CEB745 /* ViewController.swift */,
+				65384EB7242A1DE300CEB745 /* VisionObjectRecognitionViewController.swift */,
 				65384E8D242A1D6E00CEB745 /* Main.storyboard */,
 				65384E90242A1D7000CEB745 /* Assets.xcassets */,
 				65384E92242A1D7000CEB745 /* LaunchScreen.storyboard */,
@@ -113,7 +130,7 @@
 		65384E9D242A1D7100CEB745 /* QueendominoScoreAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				65384E9E242A1D7100CEB745 /* QueendominoScoreAppTests.swift */,
+				65C6467A243A217F00B154E9 /* ScoreCalcTests.swift */,
 				65384EA0242A1D7100CEB745 /* Info.plist */,
 			);
 			path = QueendominoScoreAppTests;
@@ -126,6 +143,18 @@
 				65384EAB242A1D7100CEB745 /* Info.plist */,
 			);
 			path = QueendominoScoreAppUITests;
+			sourceTree = "<group>";
+		};
+		65C28990242A52E700B45210 /* ScoreCalculation */ = {
+			isa = PBXGroup;
+			children = (
+				65C28991242A531100B45210 /* VisionToBoardConverter.swift */,
+				65D0D08E2439153C00F1DD1B /* ScoreCalculator.swift */,
+				65C28995242A535E00B45210 /* LandPiece.swift */,
+				65C28993242A534800B45210 /* PlayerBoard.swift */,
+				65D0D0902439158F00F1DD1B /* PlayerScore.swift */,
+			);
+			path = ScoreCalculation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +174,7 @@
 			);
 			name = QueendominoScoreApp;
 			productName = QueendominoScoreApp;
-			productReference = 65384E84242A1D6E00CEB745 /* QueendominoScoreApp.app */;
+			productReference = 65384E84242A1D6E00CEB745 /* QueendominoScore.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65384E99242A1D7100CEB745 /* QueendominoScoreAppTests */ = {
@@ -259,9 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65384EBA242A226300CEB745 /* Queendomino.mlmodel in Sources */,
 				65384E8C242A1D6E00CEB745 /* ViewController.swift in Sources */,
+				65384EB8242A1DE300CEB745 /* VisionObjectRecognitionViewController.swift in Sources */,
 				65384E88242A1D6E00CEB745 /* AppDelegate.swift in Sources */,
+				65C28994242A534800B45210 /* PlayerBoard.swift in Sources */,
+				65C28992242A531100B45210 /* VisionToBoardConverter.swift in Sources */,
+				65D0D08F2439153C00F1DD1B /* ScoreCalculator.swift in Sources */,
 				65384E8A242A1D6E00CEB745 /* SceneDelegate.swift in Sources */,
+				65C28996242A535E00B45210 /* LandPiece.swift in Sources */,
+				65D0D0912439158F00F1DD1B /* PlayerScore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65384E9F242A1D7100CEB745 /* QueendominoScoreAppTests.swift in Sources */,
+				65C6467B243A217F00B154E9 /* ScoreCalcTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,13 +472,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R6FBFMT8N3;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = QueendominoScoreApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dskalski.QueendominoScoreApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QueendominoScore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,13 +491,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R6FBFMT8N3;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = QueendominoScoreApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dskalski.QueendominoScoreApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = QueendominoScore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -484,7 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QueendominoScoreApp.app/QueendominoScoreApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QueendominoScore.app/QueendominoScore";
 			};
 			name = Debug;
 		};
@@ -506,7 +544,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QueendominoScoreApp.app/QueendominoScoreApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QueendominoScore.app/QueendominoScore";
 			};
 			name = Release;
 		};
