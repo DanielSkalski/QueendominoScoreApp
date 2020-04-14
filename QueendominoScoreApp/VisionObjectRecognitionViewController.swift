@@ -13,9 +13,35 @@ import Vision
 class VisionObjectRecognitionViewController: ViewController {
     
     private var detectionOverlay: CALayer! = nil
-    private var requests = [VNRequest]()
+    private var objectRecognitionRequest = [VNRequest]()
     private var visionToBoardConverter = VisionToBoardConverter()
     private var scoreCalculator = ScoreCalculator()
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    @discardableResult
+    func setupVision() -> NSError? {
+        let error: NSError! = nil
+        
+        guard let modelURL = Bundle.main.url(forResource: "Queendomino",
+                                             withExtension: "mlmodelc")
+        else {
+            return NSError(domain: "VisionObjectRecognitionViewController",
+                           code: -1,
+                           userInfo: [NSLocalizedDescriptionKey: "Model file is missing"])
+        }
+        do {
+            let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
+            visionModel.featureProvider = ThresholdProvider()
+            let objectRecognition = VNCoreMLRequest(model: visionModel,
+                                                    completionHandler: self.handleRecognition)
+            self.objectRecognitionRequest = [objectRecognition]
+        } catch let error as NSError {
+            print("Model loading went wrong: \(error)")
+        }
+        
+        return error
+    }
     
     //MARK: Handle recognition
     
@@ -23,28 +49,49 @@ class VisionObjectRecognitionViewController: ViewController {
         DispatchQueue.main.async(execute: {
             // perform all the UI updates on the main queue
             if let results = request.results {
+                let _ = self.calculateScore(results)
                 self.drawVisionRequestResults(results)
-                self.calculateScore(results)
             }
         })
     }
     
-    func calculateScore(_ results: [Any]) {
+    func calculateScore(_ results: [Any]) -> PlayerScore {
         let recognizedObjects = results
             .filter({$0 is VNRecognizedObjectObservation})
             .map({$0 as! VNRecognizedObjectObservation})
         
         if recognizedObjects.count == 0 {
-            return
+            return PlayerScore()
         }
         
         let board = visionToBoardConverter.convert(recognizedObjects)
         let score = scoreCalculator.getScore(board)
         
+        self.drawScore(score)
+        
+        return score
+    }
+    
+    func drawScore(_ score: PlayerScore) {
+        
         print("======== new score ==========")
-        for domainScore in score.domainScores {
-            print("\(domainScore.key): \(domainScore.value.score)")
+        let orderList: [LandType] = [.city, .dessert, .forrest, .grass, .mine, .plains, .sea]
+        
+        var scoreText = ""
+        for landType in orderList {
+            if score.domainScores[landType] != nil {
+                let domainScore = score.domainScores[landType]!
+                let domainScoreText = "\(domainScore.type): \(domainScore.score)"
+                print(domainScoreText)
+                scoreText += domainScoreText + "\n"
+            } else {
+                let domainScoreText = "\(landType): 0"
+                scoreText += domainScoreText + "\n"
+            }
         }
+        
+        self.infoLabel.text = scoreText
+//        infoLabel.sizeToFit()
     }
     
     //MARK: Draw recognized objects
@@ -118,14 +165,14 @@ class VisionObjectRecognitionViewController: ViewController {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
-        
+
         let exifOrientation = exifOrientationFromDeviceOrientation()
-        
+
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer,
                                                         orientation: exifOrientation,
                                                         options: [:])
         do {
-            try imageRequestHandler.perform(self.requests)
+            try imageRequestHandler.perform(self.objectRecognitionRequest)
         } catch {
             print(error)
         }
@@ -177,30 +224,6 @@ class VisionObjectRecognitionViewController: ViewController {
         detectionOverlay.position = CGPoint (x: bounds.midX, y: bounds.midY)
         
         CATransaction.commit()
-    }
-    
-    @discardableResult
-    func setupVision() -> NSError? {
-        // Setup Vision parts
-        let error: NSError! = nil
-        
-        guard let modelURL = Bundle.main.url(forResource: "Queendomino",
-                                             withExtension: "mlmodelc")
-        else {
-            return NSError(domain: "VisionObjectRecognitionViewController",
-                           code: -1,
-                           userInfo: [NSLocalizedDescriptionKey: "Model file is missing"])
-        }
-        do {
-            let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
-            let objectRecognition = VNCoreMLRequest(model: visionModel,
-                                                    completionHandler: self.handleRecognition)
-            self.requests = [objectRecognition]
-        } catch let error as NSError {
-            print("Model loading went wrong: \(error)")
-        }
-        
-        return error
     }
     
 }

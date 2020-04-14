@@ -16,6 +16,7 @@
 		65384EAA242A1D7100CEB745 /* QueendominoScoreAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384EA9242A1D7100CEB745 /* QueendominoScoreAppUITests.swift */; };
 		65384EB8242A1DE300CEB745 /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384EB7242A1DE300CEB745 /* VisionObjectRecognitionViewController.swift */; };
 		65384EBA242A226300CEB745 /* Queendomino.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 65384EB9242A226300CEB745 /* Queendomino.mlmodel */; };
+		65AAD9D524463F7C0067B451 /* TresholdProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAD9D424463F7C0067B451 /* TresholdProvider.swift */; };
 		65C28992242A531100B45210 /* VisionToBoardConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C28991242A531100B45210 /* VisionToBoardConverter.swift */; };
 		65C28994242A534800B45210 /* PlayerBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C28993242A534800B45210 /* PlayerBoard.swift */; };
 		65C28996242A535E00B45210 /* LandPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C28995242A535E00B45210 /* LandPiece.swift */; };
@@ -57,6 +58,7 @@
 		65384EAB242A1D7100CEB745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65384EB7242A1DE300CEB745 /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
 		65384EB9242A226300CEB745 /* Queendomino.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Queendomino.mlmodel; sourceTree = "<group>"; };
+		65AAD9D424463F7C0067B451 /* TresholdProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TresholdProvider.swift; sourceTree = "<group>"; };
 		65C28991242A531100B45210 /* VisionToBoardConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionToBoardConverter.swift; sourceTree = "<group>"; };
 		65C28993242A534800B45210 /* PlayerBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBoard.swift; sourceTree = "<group>"; };
 		65C28995242A535E00B45210 /* LandPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandPiece.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		65384E86242A1D6E00CEB745 /* QueendominoScoreApp */ = {
 			isa = PBXGroup;
 			children = (
+				65AAD9D324463F4A0067B451 /* Utilities */,
 				65C28990242A52E700B45210 /* ScoreCalculation */,
 				65384EB9242A226300CEB745 /* Queendomino.mlmodel */,
 				65384E87242A1D6E00CEB745 /* AppDelegate.swift */,
@@ -143,6 +146,14 @@
 				65384EAB242A1D7100CEB745 /* Info.plist */,
 			);
 			path = QueendominoScoreAppUITests;
+			sourceTree = "<group>";
+		};
+		65AAD9D324463F4A0067B451 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				65AAD9D424463F7C0067B451 /* TresholdProvider.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		65C28990242A52E700B45210 /* ScoreCalculation */ = {
@@ -298,6 +309,7 @@
 				65384E8A242A1D6E00CEB745 /* SceneDelegate.swift in Sources */,
 				65C28996242A535E00B45210 /* LandPiece.swift in Sources */,
 				65D0D0912439158F00F1DD1B /* PlayerScore.swift in Sources */,
+				65AAD9D524463F7C0067B451 /* TresholdProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
