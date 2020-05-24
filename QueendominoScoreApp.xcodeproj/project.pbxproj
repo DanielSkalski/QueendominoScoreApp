@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652D3260247AE2A7000ABA4D /* Kingdomino.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 652D325F247AE2A6000ABA4D /* Kingdomino.mlmodel */; };
 		65384E88242A1D6E00CEB745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384E87242A1D6E00CEB745 /* AppDelegate.swift */; };
 		65384E8A242A1D6E00CEB745 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384E89242A1D6E00CEB745 /* SceneDelegate.swift */; };
 		65384E8C242A1D6E00CEB745 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65384E8B242A1D6E00CEB745 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		652D325F247AE2A6000ABA4D /* Kingdomino.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Kingdomino.mlmodel; sourceTree = "<group>"; };
 		65384E84242A1D6E00CEB745 /* QueendominoScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueendominoScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65384E87242A1D6E00CEB745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65384E89242A1D6E00CEB745 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		65384E86242A1D6E00CEB745 /* QueendominoScoreApp */ = {
 			isa = PBXGroup;
 			children = (
+				652D325F247AE2A6000ABA4D /* Kingdomino.mlmodel */,
 				65AAD9D324463F4A0067B451 /* Utilities */,
 				65C28990242A52E700B45210 /* ScoreCalculation */,
 				65384EB9242A226300CEB745 /* Queendomino.mlmodel */,
@@ -305,6 +308,7 @@
 				65384E88242A1D6E00CEB745 /* AppDelegate.swift in Sources */,
 				65C28994242A534800B45210 /* PlayerBoard.swift in Sources */,
 				65C28992242A531100B45210 /* VisionToBoardConverter.swift in Sources */,
+				652D3260247AE2A7000ABA4D /* Kingdomino.mlmodel in Sources */,
 				65D0D08F2439153C00F1DD1B /* ScoreCalculator.swift in Sources */,
 				65384E8A242A1D6E00CEB745 /* SceneDelegate.swift in Sources */,
 				65C28996242A535E00B45210 /* LandPiece.swift in Sources */,

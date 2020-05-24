@@ -17,7 +17,7 @@ class VisionObjectRecognitionViewController: ViewController {
     private var visionToBoardConverter = VisionToBoardConverter()
     private var scoreCalculator = ScoreCalculator()
     
-    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     @discardableResult
     func setupVision() -> NSError? {
@@ -90,8 +90,7 @@ class VisionObjectRecognitionViewController: ViewController {
             }
         }
         
-        self.infoLabel.text = scoreText
-//        infoLabel.sizeToFit()
+        self.scoreLabel.text = scoreText
     }
     
     //MARK: Draw recognized objects
